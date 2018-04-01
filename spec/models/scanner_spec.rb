@@ -2,13 +2,14 @@ require 'rails_helper'
 
 describe 'Scanner' do
   let(:scanner) { Scanner.new('makemehost.com') }
+  let(:map) { Map.create(name: 'Roberts Rebellion') }
+  let!(:roberts_keyword) { MapKeyword.create(name: 'roberts', map: map) }
 
   describe '#scan' do
     context 'when there is a keyword positive' do
       it 'returns map name' do
-        Map.create(name: 'Roberts Rebellion')
         expect(scanner).to receive(:get_body).and_return(file_fixture("example_body.html").read)
-        expect(scanner.scan.first.name).to eq('roberts rebellion')
+        expect(scanner.scan.first.map_name).to eq('Roberts Rebellion')
       end
 
       it 'returns player count' do
