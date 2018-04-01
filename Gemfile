@@ -22,6 +22,8 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
 end
 
+gem 'turbolinks'
+
 gem 'sqlite3'
 
 group :development do
