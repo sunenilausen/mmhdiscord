@@ -40,6 +40,9 @@ gem 'rails_admin'
 gem 'rails_admin_material'
 gem 'httparty'
 gem 'nokogiri'
+gem 'discordrb'
+gem 'rest-client'
+gem 'rufus-scheduler'
 
 group :test do
   gem "factory_bot_rails"
