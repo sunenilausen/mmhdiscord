@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require rails_admin/themes/material/ui.js
 //= require_tree .

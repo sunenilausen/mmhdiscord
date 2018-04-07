@@ -10,7 +10,6 @@ class Scanner
     mmh_rows = page.css('table')[0].css('tr')
     mmh_rows.each do |row|
       maps.each do |map|
-        # matched_keywords = row.css('td')[3].text.downcase.scan(/\b(roberts|rebellion|troll)\b/)
         matched_keywords = match_keywords(row.css('td')[3].text, map.keywords)
         hits << create_map_hit(row.css('td'), matched_keywords, map) if matched_keywords.any?
       end
