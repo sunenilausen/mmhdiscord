@@ -6,7 +6,7 @@ class MapHit
   end
 
   def pretty
-    "Map: #{@map.name}. With game name: #{@game_name}. Containing #{@player_count} players. On bot: #{@bot_name}. On server: #{@server}. Identified by keywords: #{@keywords.map(&:name).join(', ')}"
+    "`#{@bot_name} on #{@server} | #{@game_name} (#{@player_count})`"
   end
 
   def subscribers
