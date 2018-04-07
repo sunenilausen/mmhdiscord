@@ -11,7 +11,7 @@ task discord: :environment do
 
   scheduler = Rufus::Scheduler.new
 
-  scheduler.every '2m' do
+  scheduler.every ENV['INTERVAL'] do
     hits = scanner.scan
     if hits.any?
       hits.each do |hit|
