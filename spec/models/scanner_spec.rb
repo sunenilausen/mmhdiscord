@@ -9,7 +9,7 @@ describe 'Scanner' do
     context 'when there is a keyword positive' do
       it 'returns map name' do
         expect(scanner).to receive(:get_body).and_return(file_fixture("example_body.html").read)
-        expect(scanner.scan.first.map_name).to eq('Roberts Rebellion')
+        expect(scanner.scan.first.map.name).to eq('Roberts Rebellion')
       end
 
       it 'returns player count' do

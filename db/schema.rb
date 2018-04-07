@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330164848) do
+ActiveRecord::Schema.define(version: 20180407172029) do
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.string "key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "channels_maps", id: false, force: :cascade do |t|
+    t.integer "channel_id"
+    t.integer "map_id"
+    t.index ["channel_id"], name: "index_channels_maps_on_channel_id"
+    t.index ["map_id"], name: "index_channels_maps_on_map_id"
+  end
 
   create_table "map_keywords", force: :cascade do |t|
     t.string "name"

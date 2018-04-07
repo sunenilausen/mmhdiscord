@@ -20,11 +20,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 gem 'turbolinks'
-
-gem 'sqlite3'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -46,6 +45,7 @@ gem 'nokogiri'
 gem 'discordrb'
 gem 'rest-client'
 gem 'rufus-scheduler'
+gem 'dotenv-rails'
 
 group :test do
   gem "factory_bot_rails"

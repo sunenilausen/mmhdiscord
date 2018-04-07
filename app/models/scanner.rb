@@ -31,6 +31,6 @@ class Scanner
     end
 
     def create_map_hit(cells, matched_keywords, map)
-      MapHit.new(cells[3].text, cells[4].text, cells[0].text, cells[1].text, matched_keywords, map.name)
+      MapHit.new(cells[3].text, cells[4].text, cells[0].text, cells[1].text, matched_keywords, map)
     end
 end
