@@ -22,9 +22,15 @@ task discord: :environment do
     end
   end
 
-  Maps.dead_hosts(hits).delete_message(bot)
-  Maps.existing_hosts(hits).edit_message(bot)
-  Maps.new_hosts(hits).send_message(bot)
+  LiveHost.dead_hosts(hits).each do |host|
+    host.delete_with_message(bot)
+  end
+  LiveHost.existing_hosts(hits).each do |host|
+    host.edit_with_message(bot)
+  end
+  LiveHost.new_hits(hits).each do |hit|
+    hit.create_and_message(bot)
+  end
 
   bot.run
 end

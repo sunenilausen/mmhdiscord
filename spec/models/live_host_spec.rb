@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Map' do
+describe 'LiveHost' do
   let(:bfme_map) { Map.create(name: 'Battle For Middle Earth') }
   let(:roberts_map) { Map.create(name: 'Roberts Rebellion') }
   let(:wotj_map) { Map.create(name: 'War of the Jewels') }
@@ -39,12 +39,9 @@ describe 'Map' do
     end
   end
 
-  describe '#send_message' do
+  describe '#edit_with_message' do
   end
 
-  describe '#edit_message' do
-  end
-
-  describe '#delete_message' do
+  describe '#delete_with_message' do
   end
 end
