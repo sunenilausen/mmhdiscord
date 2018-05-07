@@ -22,5 +22,9 @@ task discord: :environment do
     end
   end
 
+  Maps.dead_hosts(hits).delete_message(bot)
+  Maps.existing_hosts(hits).edit_message(bot)
+  Maps.new_hosts(hits).send_message(bot)
+
   bot.run
 end

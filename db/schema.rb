@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407172029) do
+ActiveRecord::Schema.define(version: 20180429191132) do
 
   create_table "channels", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20180407172029) do
     t.integer "map_id"
     t.index ["channel_id"], name: "index_channels_maps_on_channel_id"
     t.index ["map_id"], name: "index_channels_maps_on_map_id"
+  end
+
+  create_table "live_hosts", force: :cascade do |t|
+    t.integer "map_id"
+    t.string "bot_name"
+    t.string "message_id"
+    t.string "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_id"], name: "index_live_hosts_on_map_id"
   end
 
   create_table "map_keywords", force: :cascade do |t|
