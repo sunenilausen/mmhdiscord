@@ -13,12 +13,8 @@ class LiveHost < ApplicationRecord
     all.select{ |host| host.exists_in(hits) }
   end
 
-  def self.new_hosts hits
-    # hosts_from(hits: hits) - existing_hosts(hits) - dead_hosts(hits)
-  end
-
-  def self.hosts_from hits:
-    hits.map(&:map).map(&:live_hosts).flatten
+  def self.new_hits hits
+    hits.reject{ |hit| all.where(map_id: hit.map.id).where(bot_name: hit.bot_name).any? }
   end
 
   def exists_in hits
