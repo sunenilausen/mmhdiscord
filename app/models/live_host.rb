@@ -6,11 +6,7 @@ class LiveHost < ApplicationRecord
   validates :bot_name, presence: true
 
   def self.dead_hosts hits
-    # all.bot_name - hits.map(&:bot_name)
-    # all.select do |host|
-    #   hits.map { |hit| host.map == hit.map && host.bot_name == hit.bot_name }.any?
-    # end
-    
+    all.reject{ |host| host.exists_in(hits) }
   end
 
   def self.existing_hosts hits
@@ -18,7 +14,7 @@ class LiveHost < ApplicationRecord
   end
 
   def self.new_hosts hits
-    hosts_from(hits: hits) - all
+    # hosts_from(hits: hits) - existing_hosts(hits) - dead_hosts(hits)
   end
 
   def self.hosts_from hits:
