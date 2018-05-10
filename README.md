@@ -2,7 +2,6 @@
 
 ## System dependencies
 * [Ruby](https://www.ruby-lang.org/en/) 2.4.1
-* POSTGRESQL
 
 ## Configuration
 	gem install bundler
