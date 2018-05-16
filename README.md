@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System dependencies
+* [Ruby](https://www.ruby-lang.org/en/) 2.4.1
 
-Things you may want to cover:
+## Configuration
+	gem install bundler
+	bundle install
+	rails db:migrate
 
-* Ruby version
+## Start
+Start web server
+    
+    rails s
+Goto `localhost:3000/admin` and set up records of maps and keywords that you want to watch
 
-* System dependencies
+Run makemehost watch schedule
 
-* Configuration
+    rake :discord
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run test suite
+    rspec spec
+    
+## Deployment
+I do not recommend deploying on heroku since you are scraping a website and also because you need to run a job every 2min which i am not sure heroku supports
