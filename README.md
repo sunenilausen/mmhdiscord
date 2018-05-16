@@ -1,4 +1,5 @@
 # README
+This is a discord bot that monitors makemehost.com and reports maps to your discord channels. It creates, edits and deletes the messages.
 
 ## System dependencies
 * [Ruby](https://www.ruby-lang.org/en/) 2.4.1
@@ -16,7 +17,7 @@ Goto `localhost:3000/admin` and set up records of maps and keywords that you wan
 
 Run makemehost watch schedule
 
-    rake :discord
+    rake discord
 
 ## Run test suite
     rspec spec
