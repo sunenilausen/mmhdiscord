@@ -38,25 +38,4 @@ describe 'LiveHost' do
       expect(LiveHost.new_hits(hits)).not_to include(bfme_hit)
     end
   end
-
-  # describe '#edit_message' do
-  #   it 'tells bot to edit a message' do
-  #     bot = double()
-  #     channel = double()
-  #     expect(bot).to receive(:channel).with("34").returns(channel)
-  #     expect(channel).to receive(:edit_message).with("1234",)
-  #     existing_bfme_1.edit_message(bot)
-  #   end
-  # end
-
-  # describe '#delete_with_message' do
-  #   it 'deletes record and deletes message' do
-
-  #     bot = double()
-  #     expect(bot).to receive(:delete_message).with("1234", "4567")
-  #     bot = mock()
-  #     dead_roberts.delete_with_message(bot)
-  #     expect(LiveHost.all).not_to include(dead_roberts)
-  #   end
-  # end
 end

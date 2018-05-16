@@ -22,7 +22,13 @@ class LiveHost < ApplicationRecord
   end
 
   def edit_message(bot, hits)
-    message = same_as(hits).first.pretty
-    bot.channel(channel_id).load_message(message_id).edit(message)
+    content = same_as(hits).first.pretty
+    channel = bot.channel(channel_id)
+    message = channel.load_message(message_id)
+    message.edit(content)
+  end
+
+  def delete_message(bot)
+    bot.channel(channel_id).load_message(message_id).delete
   end
 end
