@@ -5,8 +5,22 @@ This is a discord bot that monitors makemehost.com and reports maps to your disc
 * [Ruby](https://www.ruby-lang.org/en/) 2.4.1
 
 ## Configuration
+Create a .env file with something like
+```
+TOKEN=ABCDEFG
+CLIENT_ID=12345
+INTERVAL=2m
+HTTP_AUTH_USERNAME=admin
+HTTP_AUTH_PASSWORD=adminpassword
+```
+
+Install gems
+
 	gem install bundler
 	bundle install
+
+Load database migrations
+
 	rails db:migrate
 
 ## Start
