@@ -6,9 +6,9 @@ class MapHit
   end
 
   def pretty
-    "`#{@bot_name} on #{@server} | #{@game_name} (#{@player_count})`"
+    "@here `#{@bot_name} on #{@server} | #{@game_name} (#{@player_count})`"
   end
-  
+
   def subscribers
     @map.channels
   end
