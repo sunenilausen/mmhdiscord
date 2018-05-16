@@ -39,9 +39,20 @@ describe 'LiveHost' do
     end
   end
 
-  describe '#edit_with_message' do
+  describe '#edit_message' do
+    it 'tells bot to edit a message' do
+      bot = mock()
+      bot.expects(:edit_message).with(??)
+      existing_bfme_1.edit_message(bot)
+    end
   end
 
   describe '#delete_with_message' do
+    it 'deletes record and deletes message' do
+      bot = mock()
+      bot.expects(:delete_message).with(??)
+      dead_roberts.delete_with_message(bot)
+      expect(LiveHost.all).not_to include(dead_roberts)
+    end
   end
 end
